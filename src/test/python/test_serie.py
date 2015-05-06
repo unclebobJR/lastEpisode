@@ -34,7 +34,7 @@ class TestSerieContextOneSeason(unittest.TestCase):
     serie = Serie("")
     serie.serieDir = self.stubDir
     serie.gatherEpisodes()
-    self.assertTrue(serie.getLastEpisode() == 4)
+    self.assertTrue(serie.getLastEpisode() == (4, 1))
     
 
 class TestSerieContextMultipleSeasons(unittest.TestCase):
@@ -59,5 +59,5 @@ class TestSerieContextMultipleSeasons(unittest.TestCase):
     serie = Serie("")
     serie.serieDir = self.stubDir
     serie.gatherEpisodes()
-    self.assertTrue(serie.getLastEpisode() == 2)
+    self.assertTrue(serie.getLastEpisode() == (2, 3))
     

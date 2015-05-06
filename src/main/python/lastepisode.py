@@ -67,7 +67,7 @@ class Serie(object):
       if season > lastSeason:
         lastSeason = season
         lastEpisode = lastEpisodePerSeason[season]
-    return lastEpisode
+    return (lastEpisode, season)
   
   def _addToEpisodes(self, files):
     for aflevering in files:
@@ -108,11 +108,11 @@ if __name__ == "__main__":
     last.gatherSeries()
     for serie in last.series.keys():
       last.series[serie].gatherEpisodes()
-      lastEpisode = last.series[serie].getLastEpisode()
+      (lastEpisode, lastSeason) = last.series[serie].getLastEpisode()
       if lastEpisode == -1:
         print serie + " : No episodes found"
       else:
-        print serie + " : " + str(lastEpisode)
+        print serie + ": last episode " + str(lastEpisode) + " of season " + str(lastSeason)
   else:
     print "Argument must be root folder of TV Shows"
     exit(1)

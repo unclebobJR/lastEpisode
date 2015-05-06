@@ -19,5 +19,5 @@ class TestLastEpisodeContextOneSerie(unittest.TestCase):
     lastEpisode.gatherSeries()
     lastEpisode.series[self.serie].serieDir = self.stubDirFlash
     lastEpisode.series[self.serie].gatherEpisodes()
-    self.assertTrue(lastEpisode.series[self.serie].getLastEpisode() == 3)
+    self.assertTrue(lastEpisode.series[self.serie].getLastEpisode() == (3, 1))
     
