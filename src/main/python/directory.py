@@ -4,6 +4,7 @@ class Directory(object):
     
   def __init__(self, rootFolder):
     self.rootFolder = rootFolder
+    self.name = os.path.basename(self.rootFolder)
     self.readEntries()
     
   def readEntries(self):
