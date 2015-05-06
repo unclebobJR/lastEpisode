@@ -22,3 +22,12 @@ class TestSerie(unittest.TestCase):
   def test_givenSerieDir_expectName(self):
     serie = Serie(os.path.join(self.testRootDir, self.serie))
     self.assertTrue(serie.name == self.serie)
+    
+  def test_givenSerieDir_expectSeason(self):
+    serie = Serie(os.path.join(self.testRootDir, self.serie))
+    self.assertTrue(serie.seasons == [self.season])
+    
+  def test_givenSerieDir_expectEpisodes(self):
+    serie = Serie(os.path.join(self.testRootDir, self.serie))
+    serie.gatherEpisodes()
+    self.assertTrue(serie.episodes == ["The_Flash_S01E01.mkv"])
