@@ -17,3 +17,6 @@ class Episode(object):
     if result != None:
       self.seasonNr = int(result.group(1))
       self.episodeNr = int(result.group(2))
+      
+  def __str__(self):
+    return self.name + "=" + str(self.seasonNr) + ":" + str(self.episodeNr)

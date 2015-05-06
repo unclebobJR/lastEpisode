@@ -8,9 +8,9 @@ class TestSerie(unittest.TestCase):
     self.testRootDir = "/tmp/TVSHOWS"
     self.serie = "The_Flash"
     self.season = "Season01"
-    self.episode = "The_Flash_S01E01.mkv"
+    self.episode = "The_Flash_S01E01"
     self.seasonPath = os.path.join(self.testRootDir, self.serie, self.season)
-    self.episodePath = os.path.join(self.seasonPath, self.episode)
+    self.episodePath = os.path.join(self.seasonPath, self.episode + ".mkv")
     if not os.path.exists(self.seasonPath):
       os.makedirs(self.seasonPath)
     open(self.episodePath, 'a').close()
@@ -30,4 +30,4 @@ class TestSerie(unittest.TestCase):
   def test_givenSerieDir_expectEpisodes(self):
     serie = Serie(os.path.join(self.testRootDir, self.serie))
     serie.gatherEpisodes()
-    self.assertTrue(serie.episodes == ["The_Flash_S01E01.mkv"])
+    self.assertTrue(str(serie.episodes[0]) == self.episode + "=1:1")

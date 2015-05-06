@@ -25,6 +25,10 @@ class TestEpisode(unittest.TestCase):
   def test_HappyEpisodeTrueName_expectSeason1Episode4(self):
     self.assertEpisode("Forbrydelsen.(The Killing).S01E04.Day 4.mkv", 1, 4)
     
+  def test_toString(self):
+    episode = Episode("Forbrydelsen.(The Killing).S01E04.Day 4.mkv")
+    self.assertTrue(str(episode) == episode.name + "=" + str(episode.seasonNr) + ":" + str(episode.episodeNr))
+    
   def assertEpisode(self, name, season, episodeNr):
     episode = Episode(name)
     self.assertTrue(episode.seasonNr == season)
