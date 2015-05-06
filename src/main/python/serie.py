@@ -6,11 +6,16 @@ class Serie(object):
     self.serieDir = Directory(serieDir)
     self.episodes = []
     
-  def gatherEpisodes(self):
-    for season in self.serieDir.subdirs:
-      seasonDir = Directory(os.path.join(self.serieDir.rootFolder, season))
-      self._addToEpisodes(seasonDir.files)
-    self._addToEpisodes(self.serieDir.files)
+  def gatherEpisodes(self, rootFolder=None, mainDir=None):
+    if rootFolder == None and mainDir == None:
+      rootFolder = self.serieDir.rootFolder
+      mainDir = self.serieDir.subdirs
+      self._addToEpisodes(self.serieDir.files)
+    for subDir in mainDir:
+      subsubDir = Directory(os.path.join(rootFolder, subDir))
+      self._addToEpisodes(subsubDir.files)
+      if len(subsubDir.subdirs) > 0:
+        self.gatherEpisodes(subsubDir.rootFolder, subsubDir.subdirs)
   
   def getName(self):
     return self.serieDir.name
