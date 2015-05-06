@@ -7,9 +7,9 @@ class Directory(object):
     self.name = os.path.basename(self.rootFolder)
     self.files = []
     self.subdirs = []
-    self.readEntries()
+    self._readEntries()
     
-  def readEntries(self):
+  def _readEntries(self):
     if os.path.exists(self.rootFolder):
       for f in listdir(self.rootFolder):
         if os.path.isdir(os.path.join(self.rootFolder, f)):
@@ -18,3 +18,6 @@ class Directory(object):
           self.files.append(f)
     else:
       self.files = []
+      
+  def join(self, name):
+    return os.path.join(self.rootFolder, name)
