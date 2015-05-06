@@ -1,7 +1,7 @@
 import unittest
-from directory import Directory
 import os
 import shutil
+from lastepisode import Directory
 
 class TestDirectory(unittest.TestCase):
   

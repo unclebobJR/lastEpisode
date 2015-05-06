@@ -1,5 +1,5 @@
 import unittest
-from episode import Episode
+from lastepisode import Episode
 
 class TestEpisode(unittest.TestCase):
   def test_emptyEpisode_expectEmpty(self):

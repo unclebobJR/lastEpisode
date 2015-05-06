@@ -1,6 +1,6 @@
 import unittest
-from serie import Serie
 from stub_directory import StubDirectory
+from lastepisode import Serie
 
 class TestSerieContextOneSeason(unittest.TestCase):
   

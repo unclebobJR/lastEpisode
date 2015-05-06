@@ -1,4 +1,4 @@
-from directory import Directory
+from lastepisode import Directory
 class StubDirectory(Directory):
     
   def __init__(self, rootFolder):
