@@ -11,7 +11,7 @@ class TestLastEpisodeContextOneSerie(unittest.TestCase):
     self.stubDirSeries.subdirs = [self.serie]
     self.stubDirFlash = StubDirectory(self.serie)
     self.stubDirFlash.subdirs = ["Season01"]
-    self.stubDirFlash.files = ["The_Flash_S01E01.mkv", "The_Flash_S01E02.mkv", "The_Flash_S01E03.mkv"]
+    self.stubDirFlash.files = ["The_Flash_S01E01.mkv", "The_Flash_S01E02.mKV", "The_Flash_S01E03.MKV"]
 
   def test_happyFlowLastEpisode_expect3(self):
     lastEpisode = LastEpisode(self.rootDir)

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import sys
 from os import listdir
 import os.path
@@ -15,13 +17,13 @@ class LastEpisode(object):
 
 class Episode(object):
 
-  MOVIE_EXTENSIONS = ['.mkv', '.avi', '.divx']
+  MOVIE_EXTENSIONS = ['.mkv', '.avi', '.divx', '.flv', '.mov', '.wmv', '.asf', '.mpg', '.mpeg', '.mp4', '.m4v']
   def __init__(self, fileName):
     self.name = ""
     self.episodeNr = -1
     self.seasonNr = -1
     (base, ext) = os.path.splitext(fileName)
-    if ext in Episode.MOVIE_EXTENSIONS:
+    if ext.lower() in Episode.MOVIE_EXTENSIONS:
       self.name = base
       self.parseNameforSeasonEpisode()
   
