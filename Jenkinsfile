@@ -2,6 +2,8 @@
   stage ('Build and Test') {
     checkout scm
     sh '/data/jenkins/UncleBobJr/test'
-    stage 'Deploy'
+  }
+  stage ('Deploy') {
+   echo 'todo'
   }
  }
