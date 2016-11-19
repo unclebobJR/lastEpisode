@@ -1,7 +1,7 @@
  node ('master'){
   stage ('Build and Test') {
     checkout scm
-     pwd
+    sh 'pwd'
     sh 'test'
     stage 'Deploy'
   }
