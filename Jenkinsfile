@@ -1,8 +1,7 @@
  node ('master'){
   stage ('Build and Test') {
     checkout scm
-    sh 'pwd'
-    sh 'test'
+    sh '/data/jenkins/UncleBobJr/test'
     stage 'Deploy'
   }
  }
