@@ -1,2 +1,4 @@
+#!/bin/bash
+exit
 export PYTHONPATH=src/main/python
 python -m unittest discover -s src/test/python
